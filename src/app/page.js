@@ -61,7 +61,7 @@ export default function Page() {
 
     console.log("Sent email:" + email)
     console.log("Sent pass:" + pass)
-    runDBCallAsync(`http://localhost:3000/api/login?email=${email}&pass=${pass}`)
+    runDBCallAsync(`api/login?email=${email}&pass=${pass}`)
   }; // end handler
 
 
@@ -143,7 +143,7 @@ export default function Page() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="http://localhost:3000/register" variant="body2">
+              <Link href="register" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

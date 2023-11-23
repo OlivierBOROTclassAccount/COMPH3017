@@ -18,7 +18,8 @@ export async function GET(req, res) {
   
     // =================================================
     const { MongoClient } = require('mongodb');
-    const url = 'mongodb://root:example@localhost:27017/';
+    // const url = 'mongodb://root:example@localhost:27017/';
+    const url = 'mongodb+srv://olivierborot:VNoAzU7j54TxP3Wb@rwa-cluster.iyfqywo.mongodb.net/?retryWrites=true&w=majority';
     const client = new MongoClient(url);
     const dbName = 'App'; // database name
     await client.connect();
