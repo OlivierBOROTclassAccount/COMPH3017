@@ -24,15 +24,8 @@ export default function Page() {
     const [data, setData] = useState(null)
     const [weather, setWeatherData] = useState(0)
     const User = req.session.User;
-    if (User[0].acc_type == "customer") {
-        // customer dashboard
-
-    } else if (User[0].acc_type == "manager"){
-        // manager dashboard
-
-    } else {
-        // if not redirect to login
-        res.redirect('/login');
+    if (User[0].acc_type != "customer") {
+        res.redirect('/');
       }
 
     useEffect(() => {

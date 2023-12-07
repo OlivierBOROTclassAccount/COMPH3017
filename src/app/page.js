@@ -21,7 +21,6 @@ import { green, purple } from '@mui/material/colors';
 export default function Page() {
 
 
-
   /*
   This function does the actual work
   calling the fetch to get things from the database.
@@ -30,15 +29,16 @@ export default function Page() {
     const res = await fetch(url);
     const data = await res.json();
  
-    if(data.data== "valid"){
+    if(data.success){
       console.log("login is valid!")
-
+      window.location.href = data.redirect;
       
     } else {
 
       console.log("not valid  ")
     }
   }
+
 
 
   /*
@@ -65,9 +65,6 @@ export default function Page() {
   }; // end handler
 
 
-
-
-  
   const theme = createTheme({
     palette: {
      
@@ -79,8 +76,6 @@ export default function Page() {
   
 
 
-
-  
   return (
     <ThemeProvider theme={theme}>
     <Container component="main"  maxWidth="xs">
